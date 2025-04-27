@@ -1,0 +1,106 @@
+.event-list-container {
+    font-family: sans-serif;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 12px;
+}
+
+.no-events-message {
+    padding: 20px;
+    text-align: center;
+    color: #555;
+    font-style: italic;
+}
+
+.events-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.events-table th,
+.events-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.events-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+}
+
+.events-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.events-table tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+@media (max-width: 768px) {
+
+    .event-list-container {
+        border: none;
+        box-shadow: none;
+    }
+
+    .events-table thead {
+        display: none;
+    }
+
+    .events-table tr.event-row {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        background-color: #fff;
+    }
+
+    .events-table td {
+        display: block;
+        text-align: right;
+        padding: 10px 15px;
+        padding-left: 45%;
+        position: relative;
+        border-bottom: 1px dotted #eee;
+        min-height: 1.5em;
+    }
+
+    .events-table td:last-child {
+        border-bottom: none;
+    }
+
+    .events-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 40%;
+        padding-right: 10px;
+        font-weight: 600;
+        color: #333;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    .events-table tbody tr:hover {
+        background-color: transparent;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-table td {
+        padding-left: 40%;
+    }
+
+    .events-table td::before {
+        width: 35%;
+    }
+}
